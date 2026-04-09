@@ -1,4 +1,4 @@
-package uni.edu.pe.pilaGenerica;
+package uni.edu.pe.pilaAutos;
 
 public interface iStack<T> {
 

@@ -1,6 +1,8 @@
 package uni.edu.pe.pilaEstudiantes;
 
-public class PilaSimple {
+import java.util.Scanner;
+
+public class SStack implements IStack {
 
     Nodo top;
 
@@ -12,6 +14,47 @@ public class PilaSimple {
         } else {
             return false;
         }
+    }
+
+    public void action(){
+        System.out.println("Ingresa la accion a realizar:");
+
+        Scanner sc = new Scanner(System.in);
+
+        Integer option = sc.nextInt();
+        if(option==1){
+            System.out.println("Ingresa el codigo del estudiante a agregar:");
+            int elem = sc.nextInt();
+            push(elem);
+            action();
+        } else if(option==2){
+            pop();
+            action();
+        } else if(option==3){
+            System.out.println("Recorriendo...");
+            recorre();
+            action();
+        } else if(option==4){
+            System.out.println("Que tan apilado quiere el nodo:");
+            int elem = sc.nextInt();
+            getNodo(elem);
+            action();
+        } else if (option==5) {
+            System.out.println("Finalizando...");
+        }  else if (option==6) {
+            System.out.println("Obteniendo Nota mas alta...");
+            System.out.println(getCod());
+            action();
+        } else if (option==7) {
+            System.out.println("Obteniendo tamaño...");
+            System.out.println(getSize());
+            action();
+        } else {
+            System.out.println("Opcion no válida");
+            action();
+        }
+
+
     }
 
     public void push(int cod){
@@ -28,6 +71,14 @@ public class PilaSimple {
             top = newNodo;
             size++;
         }
+    }
+
+    public int getSize(){
+        return size;
+    }
+
+    public int getCod(){
+        return top.cod;
     }
 
     public Integer pop(){
@@ -67,7 +118,7 @@ public class PilaSimple {
                 count++;
                 temp = temp.pre;
             }
-
+            System.out.println(temp.cod);
             return temp.cod;
 
         }

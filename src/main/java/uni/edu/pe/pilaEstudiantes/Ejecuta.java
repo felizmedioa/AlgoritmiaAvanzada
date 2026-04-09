@@ -8,9 +8,9 @@ public class Ejecuta {
 
         //System.out.printf(estudiante1.toString());
 
-        PilaSimple pila1 = new PilaSimple();
+        SStack pila1 = new SStack();
 
-        pila1.getNodo(0);
+//        pila1.getNodo(0);
 
         pila1.push(11);
         pila1.push(22);
@@ -19,9 +19,11 @@ public class Ejecuta {
         pila1.push(55);
 
 
-        pila1.recorre();
-        pila1.getNodo(4);
-        pila1.getNodo(5);
+//        pila1.recorre();
+//        pila1.getNodo(4);
+//        pila1.getNodo(5);
+
+        pila1.action();
     }
 
 }
