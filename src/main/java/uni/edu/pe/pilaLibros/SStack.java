@@ -1,7 +1,5 @@
 package uni.edu.pe.pilaLibros;
 
-import java.util.Scanner;
-
 public class SStack implements IStack {
 
     SLibro peak;
@@ -85,21 +83,48 @@ public class SStack implements IStack {
 
     @Override
     public boolean contain(String name) {
-        return false;
+        if(isEmpty()){
+            System.out.println("Pila Vacía");
+            return false;
+        } else {
+            SLibro temp = peak;
+            while (temp != null){
+                System.out.println(temp.getName() + " | " + name);
+                if(temp.getName() == name) return true;
+                temp = temp.next;
+            }
+            return false;
+        }
     }
 
     @Override
     public SLibro getBase() {
-        return null;
+        if(isEmpty()) return null;
+        else {
+            SLibro temp = peak;
+            while (temp.next != null){
+                temp = temp.next;
+            }
+            return temp;
+        }
     }
 
     @Override
     public void swipTopTwo() {
-
+        if(size < 2){
+            System.out.println("Se necesitan al menos 2 elementos en la pila");
+        } else  {
+            SLibro temp = peak.next;
+            peak.next = temp.next;
+            temp.next = peak;
+            peak = temp;
+        }
     }
 
     @Override
     public void reverse() {
+
+
 
     }
 }

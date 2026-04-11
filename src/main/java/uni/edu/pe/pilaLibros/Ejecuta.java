@@ -24,13 +24,16 @@ public class Ejecuta {
 
         //pilaLibros.pop();
 
-        pilaLibros.recorre();
+        //pilaLibros.recorre();
 
-        pilaLibros.clear();
+        //pilaLibros.clear();
 
         pilaLibros.recorre();
 
         System.out.println(pilaLibros.getSize());
-
+        System.out.println(pilaLibros.contain("Los Jefes"));
+        //System.out.println(pilaLibros.getBase().toString());
+        pilaLibros.swipTopTwo();
+        pilaLibros.recorre();
     }
 }
