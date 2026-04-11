@@ -14,9 +14,14 @@ public class Ejecuta {
 
         SStack pilaLibros = new SStack();
 
-        pilaLibros.push("Los Jefes", "Vargas LLosa", 13);
-        pilaLibros.push("Crimen y Castigo", "Fiodor Dovtoiescty", 15);
-        pilaLibros.push("La Ciudad y Los Perros", "Vargas LLosa", 10);
+        SLibro newLibro1 = new SLibro("Los Jefes", "Vargas LLosa", 13);
+        SLibro newLibro2 = new SLibro("Crimen y Castigo", "Fiodor Dovtoiescty", 15);
+        SLibro newLibro3 = new SLibro("La Ciudad y Los Perros", "Vargas LLosa", 10);
+
+
+        pilaLibros.push(newLibro1);
+        pilaLibros.push(newLibro2);
+        pilaLibros.push(newLibro3);
 
         System.out.println("<------------------>");
 

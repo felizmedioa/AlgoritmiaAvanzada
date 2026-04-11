@@ -2,7 +2,7 @@ package uni.edu.pe.pilaLibros;
 
 public interface IStack {
 
-    public void push(String name, String autor, Integer page);
+    public void push(SLibro newLibro);
     public SLibro pop();
     public boolean isEmpty();
     public Integer getSize();

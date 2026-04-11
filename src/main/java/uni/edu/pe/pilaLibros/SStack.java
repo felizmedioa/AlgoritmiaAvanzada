@@ -6,8 +6,8 @@ public class SStack implements IStack {
     Integer size = 0;
 
     @Override
-    public void push(String name, String autor, Integer page) {
-        SLibro newLibro = new SLibro(name, autor, page);
+    public void push(SLibro newLibro) {
+        //SLibro newLibro = new SLibro(name, autor, page);
         if(isEmpty()){
             peak = newLibro;
         } else {
@@ -124,7 +124,12 @@ public class SStack implements IStack {
     @Override
     public void reverse() {
 
+        SStack tempPila =  new SStack();
 
+        while(peak != null){
+            tempPila.push(pop());
 
+        }
+        peak = tempPila.peak;
     }
 }
