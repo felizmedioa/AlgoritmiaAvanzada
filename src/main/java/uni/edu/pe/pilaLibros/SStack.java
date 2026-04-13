@@ -14,8 +14,8 @@ public class SStack implements IStack {
             newLibro.next = peak;
             peak = newLibro;
         }
-        System.out.println("Agregando Libro a la Pila...");
-        System.out.println(newLibro.toString());
+        //System.out.println("Agregando Libro a la Pila...");
+        //System.out.println(newLibro.toString());
         size++;
     }
 
@@ -29,7 +29,7 @@ public class SStack implements IStack {
             SLibro elem = peak;
             peak = peak.next;
             elem.next = null;
-            System.out.println("Eliminando elemento = " + elem.toString());
+            //System.out.println("Eliminando elemento = " + elem.toString());
             size--;
             return elem;
         }
@@ -123,13 +123,11 @@ public class SStack implements IStack {
 
     @Override
     public void reverse() {
-
         SStack tempPila =  new SStack();
-
         while(peak != null){
             tempPila.push(pop());
-
+            size++;
         }
-        peak = tempPila.peak;
+        this.peak = tempPila.peak;
     }
 }

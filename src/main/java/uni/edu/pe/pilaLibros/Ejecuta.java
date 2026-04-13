@@ -35,10 +35,21 @@ public class Ejecuta {
 
         pilaLibros.recorre();
 
-        System.out.println(pilaLibros.getSize());
-        System.out.println(pilaLibros.contain("Los Jefes"));
+        System.out.println("<------------------------------>");
+        pilaLibros.reverse();
+        pilaLibros.recorre();
+        //pilaLibros.recorre();
+
+        //System.out.println(pilaLibros.getSize());
+        //System.out.println(pilaLibros.contain("Los Jefes") + " Coincidencia encontrada");
         //System.out.println(pilaLibros.getBase().toString());
+        System.out.println("<------------------------------>");
         pilaLibros.swipTopTwo();
         pilaLibros.recorre();
+
+        System.out.println("<------------------------------>");
+        pilaLibros.reverse();
+        pilaLibros.recorre();
+
     }
 }
