@@ -8,4 +8,5 @@ public interface IQueue<T> {
     public T getHead();
     public T getTail();
     public void recorre();
+    public int getSize();
 }

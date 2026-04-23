@@ -4,7 +4,7 @@ public class SQueue<T> implements IQueue<T>{
 
     protected SNodo<T> head;
     protected SNodo<T> tail;
-    int size = 0;
+    private int size = 0;
 
     @Override
     public void enqueue(T name) {
@@ -28,6 +28,7 @@ public class SQueue<T> implements IQueue<T>{
             SNodo<T> temp = head;
             head = head.siguiente;
             temp.siguiente = null;
+            size--;
             return temp.nombre;
         }
 
@@ -62,5 +63,10 @@ public class SQueue<T> implements IQueue<T>{
             temp = temp.siguiente;
         }
         System.out.println(text);
+    }
+
+    @Override
+    public int getSize() {
+        return size;
     }
 }
