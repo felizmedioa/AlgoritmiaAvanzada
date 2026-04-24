@@ -11,5 +11,6 @@ public interface IList<T> {
     public String toString();
     public void recorre();
     public void remove(T e);
+    public void removeAll(T e);
 
 }

@@ -92,26 +92,54 @@ public class SList<T> implements IList<T>{
     public void remove(T e) {
         if(isEmpty()){
             System.out.println("Lista vacía: No se puede buscar");
+            return;
         } else if(first.identifier.equals(e)){
             removeFirst();
-        } el
-            SNode<T> temp1 = first;
-            boolean encontrado = false;
-            while(temp1.next != null && !encontrado){
-                if(temp1.next.identifier.equals(e)) encontrado = true;
-                else temp1 = temp1.next;
+            return;
+        }
+        SNode<T> temp1 = first;
+        boolean encontrado = false;
+        while(temp1.next != null && !encontrado){
+            if(temp1.next.identifier.equals(e)) encontrado = true;
+            else temp1 = temp1.next;
+        }
+        if(encontrado) {
+            temp1.next = temp1.next.next;
+            size--;
+            if (temp1.next == null){
+                last = temp1;
             }
-            if(encontrado) {
-                temp1.next = temp1.next.next;
-                size--;
-                if (temp1.next == null){
-                    last = temp1
-                }
-            } else {
-                System.out.println("Elemento no encontrado: No se puede quitar");
-            }
+        } else {
+            System.out.println("Elemento no encontrado: No se puede quitar");
         }
     }
 
+    @Override
+    public void removeAll(T e) {
+        if(isEmpty()) {
+            System.out.println("Lista vacía");
+            return;
+        }
+        boolean exist = false;
+        while (first.identifier.equals(e)){
+            removeFirst();
+            exist = true;
+        }
+        if(first == null) return;
+        SNode<T> temp = first;
+
+        while(temp.next != null){
+            if(temp.next.identifier.equals(e)) {
+                exist = true;
+                temp.next = temp.next.next;
+                size--;
+                if(temp.next == null) last = temp;
+            }
+            else {
+                temp = temp.next;
+            }
+        }
+        if(exist == false) System.out.println("La lista no contiene este elemento");
+    }
 
 }
